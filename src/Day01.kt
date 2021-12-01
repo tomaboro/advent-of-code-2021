@@ -1,17 +1,43 @@
+data class AccumulatorA(
+    val previous: Int?,
+    val increases: Int
+)
+
+data class AccumulatorB(
+    val previous: List<Int>,
+    val increases: Int
+)
+
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
-    }
+    val input = readInput("Day01").map { it.toInt() }
 
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
+    val part1Result = input
+        .fold(AccumulatorA(null, 0)) { acc, next ->
+            if (acc.previous == null) {
+                acc.copy(previous = next)
+            } else {
+                acc.copy(
+                    previous = next,
+                    increases = if (acc.previous < next) acc.increases + 1 else acc.increases
+                )
+            }
+        }
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
+    val part2Result = input
+        .fold(AccumulatorB(emptyList(), 0)) { acc, next ->
+            if (acc.previous.size < 3) {
+                val nextList = acc.previous.plus(next)
+                acc.copy(previous = nextList)
+            } else {
+                val nextList = acc.previous.drop(1).plus(next)
+                acc.copy(
+                    previous = nextList,
+                    increases =
+                    if (acc.previous.sum() < nextList.sum()) acc.increases + 1 else acc.increases
+                )
+            }
+        }
 
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
+    println("Part 1 result: ${part1Result.increases}")
+    println("Part 2 result: ${part2Result.increases}")
 }
