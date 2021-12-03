@@ -1,0 +1,35 @@
+📦 files 🏠
+
+🏁 🍇
+  🍺📇🐇📄 🔤Day03.txt🔤❗️ ➡️ file
+  🍺🔡 file ❗ ➡ text
+  🔫 text 🔤❌n🔤 ❗ ➡ 🖍🆕 lines
+  🐼 lines ❗
+  📏lines❓ ➡ linesCount
+  📏 🎶🐽lines 0❗❗❓ ➡ lineLength
+  🆕🍨🐚🔡🍆❗ ➡ 🖍🆕  gammaBinaryProto
+  🆕🍨🐚🔡🍆❗ ➡ 🖍🆕  epsilonBinaryProto
+  🔂 i 🆕⏩ 0 lineLength❗️ 🍇
+    0 ➡️ 🖍🆕  oneCount
+    🔂 j 🆕⏩ 0 linesCount❗️ 🍇
+      🎶🐽lines j❗❗ ➡ line
+      🐽line i❗ ➡ bit
+      ↪️ bit 🙌 🔤1🔤 🍇
+        oneCount ⬅️➕ 1
+      🍉
+    🍉
+    ↪️ oneCount ▶️ 🤜linesCount ➖ oneCount🤛 🍇
+      🐻 gammaBinaryProto 🔤1🔤❗️
+      🐻 epsilonBinaryProto 🔤0🔤❗️
+    🍉
+    🙅 🍇
+      🐻 gammaBinaryProto 🔤0🔤❗️
+      🐻 epsilonBinaryProto 🔤1🔤❗️
+    🍉
+  🍉
+  🆕🔡 gammaBinaryProto 🔤🔤❗️ ➡ gammaBinary
+  🍺🔢 gammaBinary 2❗️ ➡ gamma
+  🆕🔡 epsilonBinaryProto 🔤🔤❗️ ➡ epsilonBinary
+  🍺🔢 epsilonBinary 2❗️ ➡ epsilon
+  😀 🔡 gamma ✖️ epsilon ❗️❗️
+🍉
