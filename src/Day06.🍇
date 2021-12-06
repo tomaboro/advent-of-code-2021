@@ -1,0 +1,39 @@
+📦 files 🏠
+
+🏁 🍇
+  🎞🐇💻❗️ ➡️️ args
+  🍺🔢🐽args 2❗ 10❗️️️ ➡️️ daysToSimulate
+  🐽args 1❗️➡️️ filename
+  🍺📇🐇📄 filename❗️ ➡️️ file
+  🍺🔡 file ❗ ➡️ text
+  🔫 text 🔤❌n🔤 ❗ ➡️ lines
+  🐽lines 0❗ ➡️ firstLine
+  🔫 firstLine 🔤,🔤 ❗ ➡️ initialFish
+
+  🆕🍯🐚🔢🍆❗ ➡️ 🖍🆕  populationDictionary
+  🔂 i 🆕⏩ 0 9❗️ 🍇
+    📏🐭initialFish 🍇 element 🔡➡️️👌 ↩️ element 🙌 🔡i❗ 🍉❗❓ ➡️️ 🐽populationDictionary 🔡i❗❗
+  🍉
+
+  🔂 n 🆕⏩ 0 daysToSimulate❗️ 🍇
+    🍺🐽populationDictionary 🔤0🔤❗ ➡️ zeroPopulation
+    🔂 i 🆕⏩ 0 9❗️ 🍇
+      ↪️ i 🙌 8  🍇
+        zeroPopulation ➡️️ 🐽populationDictionary 🔤8🔤❗
+      🍉
+      🙅↪️ i️ 🙌 6 🍇
+        zeroPopulation ➕ 🍺🐽populationDictionary 🔤7🔤❗ ➡️️ 🐽populationDictionary 🔤6🔤❗
+      🍉
+      🙅 🍇
+        🍺🐽populationDictionary 🔡i ➕ 1❗❗ ➡️️ 🐽populationDictionary 🔡i❗❗
+      🍉
+    🍉
+  🍉
+
+  0 ➡️ 🖍🆕 result
+  🔂 i 🆕⏩ 0 9❗️ 🍇
+    result ⬅️➕ 🍺🐽populationDictionary 🔡i❗❗
+  🍉
+
+  😀 🔡result❗❗
+🍉
