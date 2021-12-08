@@ -32,7 +32,7 @@ private object Day07 {
 fun main() {
     check(Day07.solvePart1("Day07_test").result == 37)
     val part1Solution = Day07.solvePart1("Day07")
-    println("Part 2 solution: ${part1Solution.result} [${part1Solution.time}ms]")
+    println("Part 1 solution: ${part1Solution.result} [${part1Solution.time}ms]")
 
     check(Day07.solvePart2("Day07_test").result == 168)
     val part2Solution = Day07.solvePart2("Day07")
