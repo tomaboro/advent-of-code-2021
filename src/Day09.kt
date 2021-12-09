@@ -48,8 +48,7 @@ private object Day09 {
             input.foldIndexed(emptyList<Set<Point>>()) { y, acc, row ->
                 row.foldIndexed(acc) { x, basins, _ ->
                     if (!basins.any { it.contains(Point(x, y)) } && input[y][x] != 9) {
-                        val newBasin: Set<Point> = expandBasin(input, setOf(Point(x, y)), Point(x, y))
-                        basins.plus<Set<Point>>(newBasin)
+                        basins.plus<Set<Point>>(expandBasin(input, setOf(Point(x, y)), Point(x, y)))
                     } else {
                         basins
                     }
