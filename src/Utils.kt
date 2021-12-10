@@ -1,7 +1,7 @@
 import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
-
+import kotlin.collections.Map
 
 
 /**
@@ -25,3 +25,7 @@ fun<T> measureTimeInMillis(function: () -> T): TimeMeasureResult<T> {
     val endTime = System.currentTimeMillis()
     return TimeMeasureResult(result, endTime - startTime)
 }
+
+fun <K, V> Map<K, V>.reverse(): Map<V, K> = this.entries.associateBy({ it.value }) { it.key }
+
+fun<T> List<T>.middle(): T = this[this.size / 2]

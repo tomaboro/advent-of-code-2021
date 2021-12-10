@@ -36,8 +36,6 @@ private object Day08 {
         "abcdfg" to "9"
     )
 
-    private fun <K, V> Map<K, V>.reverse(): Map<V, K> = this.entries.associateBy({ it.value }) { it.key }
-
     private fun buildInitialDictionariesOptions(signals: List<String>): Map<Char, Set<Char>> {
         val ones = signals.filter { it.length == 2 }
         val fours = signals.filter { it.length == 4 }
