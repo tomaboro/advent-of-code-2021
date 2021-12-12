@@ -11,6 +11,18 @@ private object Day11 {
             }
         }
 
+    private fun findNeighbours(octopuses: List<List<DumboOctopus>>, x: Int, y:Int): List<DumboOctopus> =
+        listOfNotNull(
+            octopuses.getOrNull(y + 1)?.getOrNull(x - 1),
+            octopuses.getOrNull(y + 1)?.getOrNull(x),
+            octopuses.getOrNull(y + 1)?.getOrNull(x + 1),
+            octopuses.getOrNull(y)?.getOrNull(x - 1),
+            octopuses.getOrNull(y)?.getOrNull(x + 1),
+            octopuses.getOrNull(y - 1)?.getOrNull(x - 1),
+            octopuses.getOrNull(y - 1)?.getOrNull(x),
+            octopuses.getOrNull(y - 1)?.getOrNull(x + 1)
+        )
+
     private fun prepareNextTurnSimulation(octopuses: List<List<DumboOctopus>>): List<List<DumboOctopus>> =
         octopuses.map { octopusesRow ->
             octopusesRow.map {
@@ -39,16 +51,8 @@ private object Day11 {
         val newOctopuses =
             octopuses.mapIndexed { y, octopusesRow ->
                 octopusesRow.mapIndexed { x, octopus ->
-                    val flashedNeighbours = listOf(
-                        octopuses.getOrNull(y + 1)?.getOrNull(x - 1),
-                        octopuses.getOrNull(y + 1)?.getOrNull(x),
-                        octopuses.getOrNull(y + 1)?.getOrNull(x + 1),
-                        octopuses.getOrNull(y)?.getOrNull(x - 1),
-                        octopuses.getOrNull(y)?.getOrNull(x + 1),
-                        octopuses.getOrNull(y - 1)?.getOrNull(x - 1),
-                        octopuses.getOrNull(y - 1)?.getOrNull(x),
-                        octopuses.getOrNull(y - 1)?.getOrNull(x + 1)
-                    ).filter { it != null && it.iterationFlashed == iteration - 1 }
+                    val flashedNeighbours = findNeighbours(octopuses,x,y)
+                        .filter { it.iterationFlashed == iteration - 1 }
                     octopus.copy(
                         energyLevel = octopus.energyLevel + flashedNeighbours.size,
                         iterationFlashed = if (
